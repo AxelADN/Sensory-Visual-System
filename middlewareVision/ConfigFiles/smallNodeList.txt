@@ -11,7 +11,7 @@ LGNSimpleOpponentCells true
 MSTPolarCells false
 V1SimpleCells true
 V1ComplexCells true
-MTPatternCells false
+MTPatternCells true
 V1HyperComplex true
 V4SimpleShapeScaleInv true
 MSTTemplateCells false
@@ -19,6 +19,6 @@ V2CornerMotion false
 V1BinocularSimpleCells false
 MTComponentCells false
 V4SimpleShapeCells true
-V4Color false
+V4Color true
 V1DoubleOpponent true
 V3DisparityRange false

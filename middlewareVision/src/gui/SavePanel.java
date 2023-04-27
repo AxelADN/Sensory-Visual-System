@@ -40,7 +40,7 @@ public class SavePanel extends javax.swing.JPanel {
         setCheckArray();
         openChecks();
         rp = panel;
-        savePath = FileUtils.readFile(new File("ConfigFiles/savePath.txt")).trim();
+        savePath = FileUtils.readFile(new File("ConfigFiles"+File.separator+"savePath.txt")).trim();
         pathField.setText(savePath);
         
         getMap();
@@ -63,13 +63,13 @@ public class SavePanel extends javax.swing.JPanel {
         for(int i=0;i<20;i++){
             s=s+checkSelected[i]+"\n";
         }
-        FileUtils.write("ConfigFiles\\checks", s, "txt");
+        FileUtils.write("ConfigFiles"+File.separator+"checks", s, "txt");
     }
     
     void openChecks(){
         String s[];
         try {
-            s = FileUtils.fileLinesEx("ConfigFiles\\checks.txt");
+            s = FileUtils.fileLinesEx("ConfigFiles"+File.separator+"checks.txt");
             for(int i=0;i<20;i++){
             checkSelected[i]=Integer.parseInt(s[i]);
         }
@@ -555,7 +555,7 @@ public class SavePanel extends javax.swing.JPanel {
             // set the label to the path of the selected directory
             savePath = j.getSelectedFile().getAbsolutePath();
             pathField.setText(savePath);
-            FileUtils.write("ConfigFiles/savePath", savePath, "txt");
+            FileUtils.write("ConfigFiles"+File.separator+"savePath", savePath, "txt");
         }
 
 

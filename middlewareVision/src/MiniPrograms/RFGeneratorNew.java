@@ -597,7 +597,7 @@ public class RFGeneratorNew extends javax.swing.JFrame {
             } catch (Exception e) {
                 return;
             }
-            name = node.replace(RFlist.folder + "\\", "").replace(".txt", "");
+            name = node.replace(RFlist.folder + File.separator, "").replace(".txt", "");
             filename = node;
             nameField.setText(name);
             RFlist.loadList(node);

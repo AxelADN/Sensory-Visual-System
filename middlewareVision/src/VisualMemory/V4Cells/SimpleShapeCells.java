@@ -7,6 +7,7 @@ package VisualMemory.V4Cells;
 
 import utils.GaussianFilter;
 import VisualMemory.Cell;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.opencv.core.Mat;
@@ -34,7 +35,7 @@ public class SimpleShapeCells {
     public SimpleShapeCells(String file, String folder) {
         path = file;
         //name is a string with the full name
-        String name=path.replaceAll(".txt", "").replaceAll(folder+"\\\\","");
+        String name=path.replaceAll(".txt", "").replaceAll(folder+File.separator,"");
         //separate the name and the scale, the scale number is included in the name file
         String nameScale[]=name.split("_");
         nameCell = nameScale[0];

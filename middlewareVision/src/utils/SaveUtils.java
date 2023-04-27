@@ -12,6 +12,7 @@ import VisualMemory.V1Cells.V1Bank;
 import VisualMemory.V2Cells.V2Bank;
 import VisualMemory.V3Cells.V3Bank;
 import VisualMemory.V4Cells.V4Bank;
+import java.io.File;
 
 /**
  *
@@ -22,7 +23,7 @@ public class SaveUtils {
     static String[] e = {"L", "R"};
 
     public static void saveLMS(String folder, String name) {
-        String route = folder + "\\" + name + "\\Retina\\";
+        String route = folder + File.separator + name + File.separator + "Retina" + File.separator;
         FileUtils.saveImage(LGNBank.matL_L, route, "L_0");
         FileUtils.saveImage(LGNBank.matM_L, route, "M_0");
         FileUtils.saveImage(LGNBank.matS_L, route, "S_0");
@@ -35,7 +36,7 @@ public class SaveUtils {
 
     public static void saveSOC(String folder, String name) {
         String dkl[] = {"D", "K", "L"};
-        String route = folder + "\\" + name + "\\LGN\\";
+        String route = folder + File.separator + name + File.separator + "LGN" + File.separator;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < numberEyes(); j++) {
                 FileUtils.saveImage(LGNBank.SOC[0][j].Cells[i].mat, route, dkl[i] + "_Eye_" + j);
@@ -45,7 +46,7 @@ public class SaveUtils {
 
     public static void saveDOC(String folder, String name) {
         String iNames[] = {"Dp", "Kp", "Lp"};
-        String route = folder + "\\" + name + "\\V1\\DoubleOpponent\\";
+        String route = folder + File.separator + name + File.separator + "V1" + File.separator + "DoubleOpponent" + File.separator;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < numberEyes(); j++) {
                 FileUtils.saveImage(V1Bank.DOC[0][j].Cells[i].mat, route, iNames[i] + "_Eye_" + j);
@@ -54,7 +55,7 @@ public class SaveUtils {
     }
 
     public static void saveSimpleCells(String folder, String name) {
-        String route = folder + "\\" + name + "\\V1\\SimpleCells\\";
+        String route = folder + File.separator + name + File.separator + "V1" + File.separator + "SimpleCells" + File.separator;
         for (int i = 0; i < V1Bank.SC.length; i++) {
             for (int j = 0; j < numberEyes(); j++) {
                 for (int k = 0; k < Config.gaborOrientations; k++) {
@@ -67,7 +68,7 @@ public class SaveUtils {
     }
 
     public static void saveComplexCells(String folder, String name) {
-        String route = folder + "\\" + name + "\\V1\\ComplexCells\\";
+        String route = folder + File.separator + name + File.separator + "V1" + File.separator + "ComplexCells" + File.separator;
         for (int i = 0; i < V1Bank.CC.length; i++) {
             for (int j = 0; j < numberEyes(); j++) {
                 for (int k = 0; k < Config.gaborOrientations; k++) {
@@ -79,7 +80,7 @@ public class SaveUtils {
     }
 
     public static void saveHyperComplexCells(String folder, String name) {
-        String route = folder + "\\" + name + "\\V1\\HyperComplexCells\\";
+        String route = folder + File.separator + name + File.separator + "V1" + File.separator + "HyperComplexCells" + File.separator;
         for (int i = 0; i < V1Bank.HCC.length; i++) {
             for (int j = 0; j < numberEyes(); j++) {
                 for (int k2 = 0; k2 < V1Bank.HCC[0][0].Cells.length; k2++) {
@@ -92,7 +93,7 @@ public class SaveUtils {
     }
 
     public static void saveMergedHyperComplexCells(String folder, String name) {
-        String route = folder + "\\" + name + "\\V1\\MergedHyperComplexCells\\";
+        String route = folder + File.separator + name + File.separator + "V1" + File.separator + "MergedHyperComplexCells" + File.separator;
         for (int i = 0; i < V1Bank.HCC.length; i++) {
             for (int j = 0; j < numberEyes(); j++) {
 
@@ -105,7 +106,7 @@ public class SaveUtils {
     }
 
     public static void saveAngularCells(String folder, String name) {
-        String route = folder + "\\" + name + "\\V2\\AngularCells\\";
+        String route = folder + File.separator + name + File.separator + "V2" + File.separator + "AngularCells" + File.separator;
         for (int i = 0; i < V2Bank.AC.length; i++) {
             for (int j = 0; j < numberEyes(); j++) {
 
@@ -119,7 +120,7 @@ public class SaveUtils {
     }
 
     public static void saveMergedAngularCells(String folder, String name) {
-        String route = folder + "\\" + name + "\\V2\\MergedAngularCells\\";
+        String route = folder + File.separator + name + File.separator + "V2" + File.separator + "MergedAngularCells" + File.separator;
         for (int i = 0; i < V2Bank.AC.length; i++) {
             for (int j = 0; j < numberEyes(); j++) {
 
@@ -132,7 +133,7 @@ public class SaveUtils {
     }
 
     public static void saveCurvatureCells(String folder, String name) {
-        String route = folder + "\\" + name + "\\V2\\CurvatureCells\\";
+        String route = folder + File.separator + name + File.separator + "V2" + File.separator + "CurvatureCells" + File.separator;
         for (int i = 0; i < V2Bank.AC.length; i++) {
             for (int j = 0; j < numberEyes(); j++) {
 
@@ -147,7 +148,7 @@ public class SaveUtils {
     }
 
     public static void saveMergedCurvatureCells(String folder, String name) {
-        String route = folder + "\\" + name + "\\V2\\MergedCurvatureCells\\";
+        String route = folder + File.separator + name + File.separator + "V2" + File.separator + "MergedCurvatureCells" + File.separator;
         for (int i = 0; i < V2Bank.AC.length; i++) {//Bank
             for (int j = 0; j < numberEyes(); j++) {//Eye
                 for (int k = 0; k < V2Bank.CurvC[0][0].cells.length; k++) {//Curvature
@@ -159,7 +160,7 @@ public class SaveUtils {
     }
 
     public static void saveColorLabels(String folder, String name) {
-        String route = folder + "\\" + name + "\\V4\\ColorLabels\\";
+        String route = folder + File.separator + name + File.separator + "V4" + File.separator + "ColorLabels" + File.separator;
         FileUtils.saveImage2(V4Bank.colorLabelL, route, "0");
         if (Config.stereo) {
             FileUtils.saveImage2(V4Bank.colorLabelR, route, "1");
@@ -167,7 +168,7 @@ public class SaveUtils {
     }
 
     public static void saveSingleShapeCells(String folder, String name) {
-        String route = folder + "\\" + name + "\\V4\\SingleShapeCells\\";
+        String route = folder + File.separator + name + File.separator + "V4" + File.separator + "SingleShapeCells" + File.separator;
         for (int i = 0; i < V4Bank.SSC.length; i++) {
             for (int j = 0; j < numberEyes(); j++) {
                 FileUtils.saveImage2(V4Bank.SSC[i][j].cell.mat, route, V4Bank.SSC[i][j].nameCell + "_Scale_" + V4Bank.SSC[i][j].scale + "_ID_" + j);
@@ -176,16 +177,16 @@ public class SaveUtils {
     }
 
     public static void saveMergedShapeCells(String folder, String name) {
-        String route = folder + "\\" + name + "\\V4\\SingleShapeMergedCells\\";
+        String route = folder + File.separator + name + File.separator + "V4" + File.separator + "SingleShapeMergedCells" + File.separator;
         for (int i = 0; i < V4Bank.SMC.length; i++) {
             for (int j = 0; j < numberEyes(); j++) {
-                FileUtils.saveImage2(V4Bank.SMC[i][j].cell.mat, route, V4Bank.SMC[i][j].nameCell + "_" + j);
+                FileUtils.saveImage2(V4Bank.SMC[i][j].cell.mat, route, V4Bank.SMC[i][j].nameCell +"_" + j );
             }
         }
     }
 
     public static void saveBSimpleCells(String folder, String name) {
-        String route = folder + "\\" + name + "\\V1\\BinocularSimpleCells\\";
+        String route = folder + File.separator + name + File.separator + "V1" + File.separator + "BinocularSimpleCells" + File.separator;
         for (int i = 0; i < V1Bank.SSC.length; i++) {
             for (int j = 0; j < V1Bank.SSC[0].length; j++) {
                 for (int k = 0; k < V1Bank.SSC[0][0].evenCells.length; k++) {
@@ -197,7 +198,7 @@ public class SaveUtils {
     }
 
     public static void saveCombinedBSimpleCells(String folder, String name) {
-        String route = folder + "\\" + name + "\\V1\\CombinedBinocularSimpleCells\\";
+        String route = folder + File.separator + name + File.separator + "V1" + File.separator + "CombinedBinocularSimpleCells" + File.separator;
         for (int i = 0; i < V1Bank.SSC.length; i++) {
             for (int j = 0; j < V1Bank.SSC[0].length; j++) {
                 FileUtils.saveImage(V1Bank.SSC[i][j].composedEvenCell.mat, route, "Bank_" + i + "Phase1_Disp_" + V1Bank.SSC[i][j].disparity);
@@ -207,7 +208,7 @@ public class SaveUtils {
     }
 
     public static void saveBComplexCells(String folder, String name) {
-        String route = folder + "\\" + name + "\\V1\\BinocularComplexCells\\";
+        String route = folder + File.separator + name + File.separator + "V1" + File.separator + "BinocularComplexCells" + File.separator;
         for (int i = 0; i < V1Bank.SSC.length; i++) {
             for (int j = 0; j < V1Bank.SSC[0].length; j++) {
                 for (int k = 0; k < V1Bank.SSC[0][0].complexCells.length; k++) {
@@ -218,7 +219,7 @@ public class SaveUtils {
     }
 
     public static void saveCombinedBComplexCells(String folder, String name) {
-        String route = folder + "\\" + name + "\\V1\\CombinedBinocularComplexCells\\";
+        String route = folder + File.separator + name + File.separator + "V1" + File.separator + "CombinedBinocularComplexCells" + File.separator;
         for (int i = 0; i < V1Bank.SSC.length; i++) {
             for (int j = 0; j < V1Bank.SSC[0].length; j++) {
                 FileUtils.saveImage(V1Bank.SSC[i][j].composedComplexCell.mat, route, "Bank_" + i + "_Disp_" + V1Bank.SSC[i][j].disparity);
@@ -227,7 +228,7 @@ public class SaveUtils {
     }
 
     public static void saveBNormCells(String folder, String name) {
-        String route = folder + "\\" + name + "\\V1\\BinocularNormalizedCells\\";
+        String route = folder + File.separator + name + File.separator + "V1" + File.separator + "BinocularNormalizedCells" + File.separator;
         for (int i = 0; i < V1Bank.SSC.length; i++) {
             for (int j = 0; j < V1Bank.SSC[0].length; j++) {
                 for (int k = 0; k < V1Bank.SSC[0][0].normalizedCells.length; k++) {
@@ -238,7 +239,7 @@ public class SaveUtils {
     }
 
     public static void saveCombinedBNormCells(String folder, String name) {
-        String route = folder + "\\" + name + "\\V1\\CombinedBinocularNormalizedCells\\";
+        String route = folder + File.separator + name + File.separator + "V1" + File.separator + "CombinedBinocularNormalizedCells" + File.separator;
         for (int i = 0; i < V1Bank.SSC.length; i++) {
             for (int j = 0; j < V1Bank.SSC[0].length; j++) {
                 FileUtils.saveImage(V1Bank.SSC[i][j].composedNormalizedCell.mat, route, "Bank_" + i + "_Disp_" + V1Bank.SSC[i][j].disparity);
@@ -248,7 +249,7 @@ public class SaveUtils {
     }
 
     public static void saveBMergedCells(String folder, String name) {
-        String route = folder + "\\" + name + "\\V1\\BinocularNormalizedCells\\";
+        String route = folder + File.separator + name + File.separator + "V1" + File.separator + "BinocularNormalizedCells" + File.separator;
         for (int i = 0; i < V1Bank.SMC.length; i++) {
             for (int k = 0; k < V1Bank.SMC[0].cells.length; k++) {
                 FileUtils.saveImage(V1Bank.SMC[i].cells[k].mat, route, "Disp_" + V1Bank.SMC[i].disparity + "_Or_" + k);
@@ -257,7 +258,7 @@ public class SaveUtils {
     }
 
     public static void saveCombinedBMergedCells(String folder, String name) {
-        String route = folder + "\\" + name + "\\V1\\CombinedBinocularNormalizedCells\\";
+        String route = folder + File.separator + name + File.separator + "V1" + File.separator + "CombinedBinocularNormalizedCells" + File.separator;
         for (int i = 0; i < V1Bank.SMC.length; i++) {
             for (int k = 0; k < V1Bank.SMC[0].cells.length; k++) {
                 FileUtils.saveImage(V1Bank.SMC[i].composedCell.mat, route, "Disp_" + V1Bank.SMC[i].disparity);
@@ -266,7 +267,7 @@ public class SaveUtils {
     }
 
     public static void saveBRelativeCells(String folder, String name) {
-        String route = folder + "\\" + name + "\\V2\\BinocularRelativeDisparityCells\\";
+        String route = folder + File.separator + name + File.separator + "V2" + File.separator + "BinocularRelativeDisparityCells" + File.separator;
         for (int i = 0; i < V3Bank.SRC.length; i++) {
             for (int k = 0; k < V3Bank.SRC[0].cells.length; k++) {
                 FileUtils.saveImage(V3Bank.SRC[i].cells[k].mat, route, "Disp_" + (int) V3Bank.SRC[i].disparity + "_Or_" + k);
@@ -275,14 +276,14 @@ public class SaveUtils {
     }
 
     public static void saveCombinedBRelativeCells(String folder, String name) {
-        String route = folder + "\\" + name + "\\V2\\CombinedBinocularRelativeDisparityCells\\";
+        String route = folder + File.separator + name + File.separator + "V2" + File.separator + "CombinedBinocularRelativeDisparityCells" + File.separator;
         for (int i = 0; i < V3Bank.SRC.length; i++) {
             FileUtils.saveImage(V3Bank.SRC[i].composedCell.mat, route, "Disp_" + (int) V3Bank.SRC[i].disparity);
         }
     }
 
     public static void saveV1Motion(String folder, String name) {
-        String route = folder + "\\" + name + "\\V1\\Motion\\";
+        String route = folder + File.separator + name + File.separator + "V1" + File.separator + "Motion" + File.separator;
         for (int i = 0; i < V1Bank.MC.length; i++) {
             for (int j = 0; j < numberEyes(); j++) {
                 for (int k = 0; k < V1Bank.MC[0][0].cells.length; k++) {
@@ -295,7 +296,7 @@ public class SaveUtils {
     }
 
     public static void saveMTComponentMotion(String folder, String name) {
-        String route = folder + "\\" + name + "\\MT\\ComponentMotion\\";
+        String route = folder + File.separator + name + File.separator + "MT" + File.separator + "ComponentMotion" + File.separator;
         String ids = "";
         for (int j = 0; j < numberEyes(); j++) {
             for (int k = 0; k < MTBank.MTCC[0].CCells.length; k++) {
@@ -310,7 +311,7 @@ public class SaveUtils {
     }
 
     public static void saveMTPatternMotion(String folder, String name) {
-        String route = folder + "\\" + name + "\\MT\\PatternMotion\\";
+        String route = folder + File.separator + name + File.separator + "MT" + File.separator + "PatternMotion" + File.separator;
         String ids = "";
         for (int j = 0; j < numberEyes(); j++) {
             for (int k = 0; k < MTBank.MTPC[0].Cells.length; k++) {
@@ -322,7 +323,7 @@ public class SaveUtils {
     }
 
     public static void saveMSTRadialMotion(String folder, String name) {
-        String route = folder + "\\" + name + "\\MST\\RadialMotion\\";
+        String route = folder + File.separator + name + File.separator + "MST" + File.separator + "RadialMotion" + File.separator;
         for (int j = 0; j < numberEyes(); j++) {
             FileUtils.saveImage(MSTPolar.contC[j].mat, route, "Eye_" + j + "_Contraction");
             FileUtils.saveImage(MSTPolar.expC[j].mat, route, "Eye_" + j + "_Expansion");

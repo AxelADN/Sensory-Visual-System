@@ -1,1 +1,1 @@
-F:\HumanoideFilms\Pictures\Test\prueba2
+/home/axeladn/Documents/Tesis_Doctorado/Preprocessed_DataSet

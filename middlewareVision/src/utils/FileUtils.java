@@ -107,7 +107,7 @@ public class FileUtils {
 
     public static void saveImage(Mat src, String path, String name) {
         createDir(path);
-        File f = new File(path + "\\" + name + ".jpg");
+        File f = new File(path + File.separator + name + ".jpg");
         try {
             ImageIO.write(Convertor.Mat2Img(src), "JPEG", f);
         } catch (IOException ex) {
@@ -117,7 +117,7 @@ public class FileUtils {
 
     public static void saveImage2(Mat src, String path, String name) {
         createDir(path);
-        File f = new File(path + "\\" + name + ".jpg");
+        File f = new File(path + File.separator + name + ".jpg");
         try {
             ImageIO.write(Convertor.Mat2Img2(src), "JPEG", f);
         } catch (IOException ex) {

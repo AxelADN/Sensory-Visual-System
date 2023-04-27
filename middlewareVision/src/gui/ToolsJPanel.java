@@ -18,6 +18,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import middlewareVision.config.Init;
+import utils.OSDetector;
 
 /**
  *
@@ -186,7 +187,16 @@ public class ToolsJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         try {
             // TODO add your handling code here:
+	
+	if(OSDetector.isWindows()){
+	//If it's Windows
             run.exec("cmd.exe /c "+System.getProperty("user.dir")+"\\ConfigFiles\\Configuration.xml");
+	}
+	//if it's Unix based (e.g. Linux)
+	if(OSDetector.isUnix()){
+	  run.exec("cmd.exe /c "+System.getProperty("user.dir")+"\\ConfigFiles\\Configuration.xml");
+	}
+	else throw new IOException("Not a valid operating system.");
             //run.exec("TemplateBigNode.java");
         } catch (IOException ex) {
             Logger.getLogger(NodeGenerator.class.getName()).log(Level.SEVERE, null, ex);
